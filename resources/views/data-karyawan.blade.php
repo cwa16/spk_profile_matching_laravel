@@ -24,10 +24,11 @@
                     </div>
 
                     <div class="statistics-card">
-                        <a href="" class="btn btn-primary btn-sm">Tambah Data</a>
+                        <a href="{{ route('tambah-data-karyawan') }}" class="btn btn-primary btn-sm">Tambah Data</a>
                         <table class="table table-striped table-sm table-hover mt-2">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>NIK</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
@@ -41,15 +42,18 @@
                                     <tr>
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $item->nik }}</td>
-                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->nama }}</td>
                                         <td>{{ $item->jenis_kelamin }}</td>
-                                        <td>{{ $item->jabatan }}</td>
-                                        <td>{{ $item->golongan }}</td>
-                                        <td></td>
+                                        <td>{{ $item->jabatan->nama_jabatan }}</td>
+                                        <td>{{ $item->golongan->golongan }}</td>
+                                        <td>
+                                            <a href="{{ route('edit-data-karyawan', $item->id) }}" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="{{ route('hapus-data-karyawan', $item->id) }}" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">Belum ada data</td>
+                                        <td colspan="7" class="text-center">Belum ada data</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -63,8 +67,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    @include('includes.footer')
     <script>
         const navbar = document.querySelector('.col-navbar')
         const cover = document.querySelector('.screen-cover')

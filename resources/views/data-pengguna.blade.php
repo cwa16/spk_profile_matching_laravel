@@ -42,14 +42,27 @@
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->email }}</td>
-                                        <td>{{ $item->peran }}</td>
                                         <td>
-                                            <a href="" class="btn btn-secondary btn-sm">
+                                            @switch($item->peran)
+                                                @case('admin')
+                                                    Admin
+                                                    @break
+                                                @case('hrd')
+                                                    HRD
+                                                    @break
+                                                @case('pimpinan')
+                                                    pimpinan
+                                                @break
+
+                                            @endswitch
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('edit-data-pengguna', $item->id) }}" class="btn btn-secondary btn-sm">
                                                 Ubah
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="" class="btn btn-danger btn-sm">
+                                            <a href="{{ route('hapus-data-pengguna', $item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus?')">
                                                 Hapus
                                             </a>
                                         </td>
@@ -66,6 +79,8 @@
             </div>
         </div>
     </div>
+
+    @include('includes.footer')
 
     <script>
         const navbar = document.querySelector('.col-navbar')

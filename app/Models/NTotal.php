@@ -8,16 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class NTotal extends Model
 {
     use HasFactory;
+    protected $table = 'nilai_total';
     protected $fillable = [
-        'id_bobot',
-        'ncfp',
-        'nsfp',
-        'n_totalp',
-        'ncfs',
-        'nsfs',
-        'n_totals',
-        'ncfk',
-        'nsfk',
-        'ntotalk',
+       'tanggal',
+       'subjek',
+       'nama',
+       'nilai'
     ];
 }

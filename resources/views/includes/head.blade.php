@@ -6,7 +6,8 @@
   <!-- Scripts -->
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('js/bootstrap.min.js') }}">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css') }}">
 
     <title>@yield('title')</title>
 </head>

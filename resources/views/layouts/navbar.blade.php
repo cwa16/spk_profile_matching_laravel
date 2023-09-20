@@ -9,12 +9,10 @@
         <button class="btn-notif d-block d-md-none"><img src="./assets/img/global/bell.svg" alt=""></button>
     </div>
 
-    <div class="d-flex justify-content-between align-items-center nav-input-container">
-        <div class="nav-input-group">
-            <input type="text" class="nav-input" placeholder="Search people, team, project">
-            <button class="btn-nav-input"><img src="./assets/img/global/search.svg" alt=""></button>
+    <div class="d-flex justify-content-between align-items-right">
+           <form action="{{ route('logout') }}" method="post" class="text-right">
+            @csrf
+            <button class="btn btn-danger btn-sm" style="background: transparent; border: none; color: black;">{{ Auth::user()->name }}, Keluar</button>
+           </form>
         </div>
-
-        <button class="btn-notif d-none d-md-block"><img src="./assets/img/global/bell.svg" alt=""></button>
-    </div>
 </div>

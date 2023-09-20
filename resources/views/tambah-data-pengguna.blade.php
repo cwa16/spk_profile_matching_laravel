@@ -20,42 +20,50 @@
             <div class="content">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="content-title">Data Pengguna</h2>
+                        <div class="form-inline" style="display:inline-block">
+                            <a href="{{ URL::previous() }}" class="btn btn-secondary">Kembali</a>
+                            <h2 class="content-title">Data Pengguna</h2>
+                        </div>
                     </div>
 
-                    <div class="statistics-card">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Nama</label>
-                            <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Masukan Nama">
+                    <form action="{{ route('store-data-pengguna') }}" method="post">
+                        @csrf
+                        <div class="statistics-card">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                                <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Masukan Nama">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Peran</label>
+                                <select name="peran" id="" class="form-control">
+                                    <option value="" selected disabled>-- Pilih Peran --</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="pimpinan">Pimpinan</option>
+                                    <option value="hrd">HRD</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Kata Sandi</label>
+                                <input type="password" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Masukan Kata Sandi Baru">
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-primary btn-sm">Simpan</button>
+                                <a href="{{ URL::previous() }}" class="btn btn-secondary">Batal</a>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Peran</label>
-                            <select name="peran" id="" class="form-control">
-                                <option value="" selected disabled>-- Pilih Peran --</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Kata Sandi</label>
-                            <input type="password" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Masukan Kata Sandi Baru">
-                        </div>
-                        <div class="mb-3">
-                            <button class="btn btn-primary btn-sm">Simpan</button>
-                        </div>
-                    </div>
+                    </form>
 
                 </div>
             </div>
         </div>
-
+        @include('includes.footer')
         <script>
             const navbar = document.querySelector('.col-navbar')
             const cover = document.querySelector('.screen-cover')

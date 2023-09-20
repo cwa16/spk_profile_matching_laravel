@@ -24,13 +24,14 @@
                     </div>
 
                     <div class="statistics-card">
-                        <a href="" class="btn btn-primary btn-sm">Tambah Data</a>
+                        <a href="{{ route('tambah-data-jabatan') }}" class="btn btn-primary btn-sm">Tambah Data</a>
                         <table class="table table-striped table-sm table-hover mt-2">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Jabatan</th>
-                                    <th>Aksi</th>
+                                    <th>Ubah</th>
+                                    <th>Hapus</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,7 +39,16 @@
                                     <tr>
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $item->nama_jabatan }}</td>
-                                        <td></td>
+                                        <td>
+                                            <a href="{{ route('edit-data-jabatan', $item->id) }}" class="btn btn-secondary btn-sm">
+                                                Ubah
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('hapus-data-jabatan', $item->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Hapus?')">
+                                                Hapus
+                                            </a>
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -56,7 +66,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    @include('includes.footer')
 
     <script>
         const navbar = document.querySelector('.col-navbar')

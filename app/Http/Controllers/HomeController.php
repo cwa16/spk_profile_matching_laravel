@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Karyawan;
+use App\Models\NTotal;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::all();
+        $kary = Karyawan::all();
+        $nilai = NTotal::groupBy('subjek')->get();
+
+
+        return view('home', ['users' => $users, 'kary' => $kary, 'nilai' => $nilai]);
     }
+
 }
