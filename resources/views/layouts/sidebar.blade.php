@@ -24,7 +24,7 @@
             <path d="M10 3H3V10H10V3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
 
-        <span>Overview</span>
+        <span>Beranda</span>
     </a>
 
     <!-- <a href="./employees.html" class="sidebar-item"> -->

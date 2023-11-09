@@ -264,7 +264,7 @@
                                                                 @switch($item1->nilai-$k1[$key])
                                                                     @case(0)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 5 / 2 }}
                                                                             @else
                                                                                 {{ 5 / 1 }}
@@ -275,7 +275,7 @@
 
                                                                     @case(1)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 4.5 / 2 }}
                                                                             @else
                                                                                 {{ 4.5 / 1 }}
@@ -285,7 +285,7 @@
 
                                                                     @case(-1)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 4 / 2 }}
                                                                             @else
                                                                                 {{ 4 / 1 }}
@@ -295,7 +295,7 @@
 
                                                                     @case(2)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 3.5 / 2 }}
                                                                             @else
                                                                                 {{ 3.5 / 1 }}
@@ -305,7 +305,7 @@
 
                                                                     @case(-2)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 3 / 2 }}
                                                                             @else
                                                                                 {{ 3 / 1 }}
@@ -315,7 +315,7 @@
 
                                                                     @case(3)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 2.5 / 2 }}
                                                                             @else
                                                                                 {{ 2.5 / 1 }}
@@ -325,7 +325,7 @@
 
                                                                     @case(-3)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 2 / 2 }}
                                                                             @else
                                                                                 {{ 2 / 1 }}
@@ -335,7 +335,7 @@
 
                                                                     @case(4)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 1.5 / 2 }}
                                                                             @else
                                                                                 {{ 1.5 / 1 }}
@@ -345,7 +345,7 @@
 
                                                                     @case(-4)
                                                                         <td>
-                                                                            @if ($item1->sub_kriteria_id == 9 || $item1->sub_kriteria_id == 8)
+                                                                            @if ($item1->sub_kriteria_id == 2 || $item1->sub_kriteria_id == 3)
                                                                                 {{ 1 / 2 }}
                                                                             @else
                                                                                 {{ 1 / 1 }}
@@ -466,38 +466,38 @@
                         var lm = $(this).find('td:nth(3)').text();
                         var g = $(this).find('td:nth(4)').text();
 
-                        var nsftp = ((parseFloat(nsf) / 100) * ((parseFloat(lm) + parseFloat(g))));
-                        var ncftp = ((parseFloat(ncf) / 100) * (parseFloat(tp)));
+                        var nsftp = ((+(nsf) / 100) * ((+(lm) + +(g))));
+                        var ncftp = ((+(ncf) / 100) * (+(tp)));
 
-                        $(this).find('td:nth(11)').text(addCommas(nsftp));
-                        $(this).find('td:nth(12)').text(addCommas(ncftp));
+                        $(this).find('td:nth(11)').text(addCommas(nsftp.toFixed(2)));
+                        $(this).find('td:nth(12)').text(addCommas(ncftp.toFixed(2)));
 
                         var pm = $(this).find('td:nth(5)').text();
                         var k = $(this).find('td:nth(6)').text();
 
-                        var ncfpk = ((parseFloat(ncf) / 100) * (parseFloat(pm)));
-                        var nsfpk = ((parseFloat(nsf) / 100) * (parseFloat(k)));
+                        var ncfpk = ((+(ncf) / 100) * (+(pm)));
+                        var nsfpk = ((+(nsf) / 100) * (+(k)));
 
-                        $(this).find('td:nth(13)').text(nsfpk);
-                        $(this).find('td:nth(14)').text(ncfpk);
+                        $(this).find('td:nth(13)').text(nsfpk.toFixed(2));
+                        $(this).find('td:nth(14)').text(ncfpk.toFixed(2));
 
                         var d = $(this).find('td:nth(7)').text();
                         var ks = $(this).find('td:nth(8)').text();
 
-                        var ncfsk = ((parseFloat(ncf) / 100) * (parseFloat(d)));
-                        var nsfsk = ((parseFloat(nsf) / 100) * (parseFloat(ks)));
+                        var ncfsk = ((+(ncf) / 100) * (+(d)));
+                        var nsfsk = ((+(nsf) / 100) * (+(ks)));
 
-                        $(this).find('td:nth(15)').text(nsfsk);
-                        $(this).find('td:nth(16)').text(ncfsk);
+                        $(this).find('td:nth(15)').text(nsfsk.toFixed(2));
+                        $(this).find('td:nth(16)').text(ncfsk.toFixed(2));
 
                         var ko = $(this).find('td:nth(9)').text();
                         var ing = $(this).find('td:nth(10)').text();
 
-                        var ncfk = ((parseFloat(ncf) / 100) * (parseFloat(ko)));
-                        var nsfk = ((parseFloat(nsf) / 100) * (parseFloat(ing)));
+                        var ncfk = ((parseFloat(ncf).toFixed(2) / 100) * (parseFloat(ko).toFixed(2)));
+                        var nsfk = ((parseFloat(nsf).toFixed(2) / 100) * (parseFloat(ing).toFixed(2)));
 
-                        $(this).find('td:nth(17)').text(nsfk);
-                        $(this).find('td:nth(18)').text(ncfk);
+                        $(this).find('td:nth(17)').text(nsfk.toFixed(2));
+                        $(this).find('td:nth(18)').text(ncfk.toFixed(2));
 
                         var tp_cf = $(this).find('td:nth(11)').text();
                         var tp_sf = $(this).find('td:nth(12)').text();
@@ -511,14 +511,16 @@
                         var k_cf = $(this).find('td:nth(17)').text();
                         var k_sf = $(this).find('td:nth(18)').text();
 
-                        var sum_tp = ((parseFloat(tp_cf) + parseFloat(tp_sf)) * (parseFloat(per_tp) / 100));
-                        var sum_pk = ((parseFloat(pk_cf) + parseFloat(pk_sf)) * (parseFloat(per_pk) / 100));
-                        var sum_sk = ((parseFloat(sk_cf) + parseFloat(sk_sf)) * (parseFloat(per_sk) / 100));
-                        var sum_k = ((parseFloat(k_cf) + parseFloat(k_sf)) * (parseFloat(per_k) / 100));
+                        var sum_tp = ((+(tp_sf) + +(tp_cf)) * (+(per_tp) / 100));
+                        var sum_pk = ((+(pk_cf) + +(pk_sf)) * (+(per_pk) / 100));
+                        var sum_sk = ((+(sk_cf) + +(sk_sf)) * (+(per_sk) / 100));
+                        var sum_k = ((+(k_cf) + +(k_sf)) * (+(per_k) / 100));
+
+
 
                         var sum_final = (parseFloat(sum_tp) + parseFloat(sum_pk) + parseFloat(sum_sk) + parseFloat(
                             sum_k));
-                        $(this).find('.final').val(sum_final);
+                        $(this).find('.final').val(sum_final.toFixed(2));
                     });
 
 

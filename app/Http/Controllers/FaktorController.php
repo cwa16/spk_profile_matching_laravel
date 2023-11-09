@@ -42,15 +42,20 @@ class FaktorController extends Controller
         $kriteria = $request->kriteria;
         $ids = $request->ids;
 
+        $c_karyawan = count($karyawan_id);
+        $c_sub = count($sub_kriteria_id);
+        $iks = $c_karyawan * $c_sub;
+
         $nilais = Penilaian::whereNull('nilai')->get();
 
         if ($request->action == 'sync') {
             for ($i = 0; $i < count($karyawan_id); $i++) {
-                for ($e=0; $e < count($sub_kriteria_id); $e++) {
+                for ($e = 0; $e < count($sub_kriteria_id); $e++) {
+
                     $data = Penilaian::create([
                         'nilai' => null,
                         'sub_kriteria_id' => $sub_kriteria_id[$e],
-                        'karyawan_id' => $karyawan_id[$i],
+                        'karyawan_id' => $karyawan_id[$i]
                     ]);
                 }
 

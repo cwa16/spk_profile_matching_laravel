@@ -30,13 +30,13 @@ class NilaiController extends Controller
                     ->groupBy('karyawan.nama','sub_kriteria.nama_sub_kriteria')
                     ->get();
 
-        $k1 = SubKriteria::pluck('nilai');
-        $ks = SubKriteria::orderBy('kriteria_id', 'ASC')->pluck('persentase');
-        $kss = SubKriteria::groupBy('faktor')->orderBy('kriteria_id', 'ASC')->pluck('persentase');
-        $nsf = SubKriteria::where('faktor', 'SF')->groupBy('faktor')->value('persentase');
-        $ncf = SubKriteria::where('faktor', 'CF')->groupBy('faktor')->value('persentase');
+        $k1 = SubKriteria::orderBy('id', 'asc')->pluck('nilai');
+        $ks = SubKriteria::orderBy('id', 'asc')->pluck('persentase');
+        $kss = SubKriteria::groupBy('faktor')->orderBy('id', 'asc')->pluck('persentase');
+        $nsf = SubKriteria::orderBy('id', 'asc')->where('faktor', 'SF')->groupBy('faktor')->value('persentase');
+        $ncf = SubKriteria::orderBy('id', 'asc')->where('faktor', 'CF')->groupBy('faktor')->value('persentase');
 
-        $k = SubKriteria::get();
+        $k = SubKriteria::orderBy('id', 'asc')->get();
 
         $per_tp = Kriteria::where('id', 1)->value('persentase');
         $per_pk = Kriteria::where('id', 2)->value('persentase');
@@ -50,7 +50,7 @@ class NilaiController extends Controller
             $tanggal = Penilaian::first()->value('created_at');
         }
 
-        $k2 = SubKriteria::where('kriteria_id', 3)->get();
+        $k2 = SubKriteria::where('kriteria_id', 2)->get();
 
         return view('data-penilaian', ['karyawan' => $karyawan,
                                        'aspek' => $aspek,

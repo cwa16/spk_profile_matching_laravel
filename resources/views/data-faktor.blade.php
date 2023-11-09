@@ -86,12 +86,27 @@
                                                             <td>{{ ++$key }}</td>
                                                             <td><input type="hidden" name="karyawan_id[]"
                                                                     value="{{ $item3->id }}">{{ $item3->nama }}</td>
-                                                            @foreach ($subKriteria->where('kriteria_id', 2) as $item4)
-                                                                <td>
-                                                                    <input type="number" name="nilai[]" id=""
-                                                                        class="form-control">
-                                                                </td>
-                                                            @endforeach
+                                                                    <td>
+                                                                        <select name="nilai[]" id="" class="form-control">
+                                                                            <option value="" disabled selected>-- Pilih Pemecahan Masalah --</option>
+                                                                            <option value="5">Tercapai 81-100%</option>
+                                                                            <option value="4">Tercapai 70-80%</option>
+                                                                            <option value="3">Tercapai 60-79%</option>
+                                                                            <option value="2">Tercapai 40-59%</option>
+                                                                            <option value="1">Tercapai 10-39%</option>
+                                                                        </select>
+                                                                    </td>
+
+                                                                    <td>
+                                                                        <select name="nilai[]" id="" class="form-control">
+                                                                            <option value="" disabled selected>-- Pilih Kepemimpinan --</option>
+                                                                            <option value="5">Tercapai 81-100%</option>
+                                                                            <option value="4">Tercapai 70-80%</option>
+                                                                            <option value="3">Tercapai 60-79%</option>
+                                                                            <option value="2">Tercapai 40-59%</option>
+                                                                            <option value="1">Tercapai 10-39%</option>
+                                                                        </select>
+                                                                    </td>
 
                                                         </tr>
                                                     @endforeach
@@ -139,12 +154,27 @@
                                                             <td><input type="hidden" name="karyawan_id[]"
                                                                     value="{{ $item3->id }}">{{ $item3->nama }}
                                                             </td>
-                                                            @foreach ($subKriteria->where('kriteria_id', 3) as $item4)
-                                                                <td>
-                                                                    <input type="number" name="nilai[]"
-                                                                        id="" class="form-control">
-                                                                </td>
-                                                            @endforeach
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Disiplin --</option>
+                                                                    <option value="5">Presensi 81-100%</option>
+                                                                    <option value="4">Presensi 70-80%</option>
+                                                                    <option value="3">Presensi 60-79%</option>
+                                                                    <option value="2">Presensi 40-59%</option>
+                                                                    <option value="1">Presensi 10-39%</option>
+                                                                </select>
+                                                            </td>
+
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Kerjasama --</option>
+                                                                    <option value="5">Presensi 81-100%</option>
+                                                                    <option value="4">Presensi 70-80%</option>
+                                                                    <option value="3">Presensi 60-79%</option>
+                                                                    <option value="2">Presensi 40-59%</option>
+                                                                    <option value="1">Presensi 10-39%</option>
+                                                                </select>
+                                                            </td>
 
                                                         </tr>
                                                     @endforeach
@@ -193,12 +223,27 @@
                                                             <td><input type="hidden" name="karyawan_id[]"
                                                                     value="{{ $item3->id }}">{{ $item3->nama }}
                                                             </td>
-                                                            @foreach ($subKriteria->where('kriteria_id', 3) as $item4)
-                                                                <td>
-                                                                    <input type="number" name="nilai[]"
-                                                                        id="" class="form-control">
-                                                                </td>
-                                                            @endforeach
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Komitmen --</option>
+                                                                    <option value="5">Tepat 81-100%</option>
+                                                                    <option value="4">Tepat 70-80%</option>
+                                                                    <option value="3">Tepat 60-79%</option>
+                                                                    <option value="2">Tepat 40-59%</option>
+                                                                    <option value="1">Tepat 10-39%</option>
+                                                                </select>
+                                                            </td>
+
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Disiplin --</option>
+                                                                    <option value="5">Teguran 0 kali</option>
+                                                                    <option value="4">Teguran 1-2 kali</option>
+                                                                    <option value="3">Teguran 3-4 kali</option>
+                                                                    <option value="2">Teguran 4-5 kali</option>
+                                                                    <option value="1">Teguran >5 kali</option>
+                                                                </select>
+                                                            </td>
 
                                                         </tr>
                                                     @endforeach
@@ -247,12 +292,32 @@
                                                             <td><input type="hidden" name="karyawan_id[]"
                                                                     value="{{ $item3->id }}">{{ $item3->nama }}
                                                             </td>
-                                                            @foreach ($subKriteria->where('kriteria_id', 1) as $item4)
-                                                                <td>
-                                                                    <input type="number" name="nilai[]"
-                                                                        id="" class="form-control">
-                                                                </td>
-                                                            @endforeach
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Tingkat Pendidikan --</option>
+                                                                    <option value="5">S2</option>
+                                                                    <option value="4">S1/D4</option>
+                                                                    <option value="3">D3</option>
+                                                                    <option value="2">SMA/SMK</option>
+                                                                    <option value="1">SMP</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Golongan --</option>
+                                                                    <option value="5">III</option>
+                                                                    <option value="4">II</option>
+                                                                    <option value="3">I</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select name="nilai[]" id="" class="form-control">
+                                                                    <option value="" disabled selected>-- Pilih Lama Bekerja --</option>
+                                                                    <option value="5"> >3-5 Tahun</option>
+                                                                    <option value="4"> >2-3 Tahun</option>
+                                                                    <option value="3">1-2 Tahun</option>
+                                                                </select>
+                                                            </td>
 
                                                         </tr>
                                                     @endforeach
@@ -261,9 +326,9 @@
                                         </div>
                                     </div>
                                     <button class="btn btn-primary" name="action" submit"
-                                        value="sync">Sync</button>
+                                        value="sync">Sikron</button>
                                     <button class="btn btn-primary" name="action" submit"
-                                        value="save">Submit</button>
+                                        value="save">Simpan</button>
                                 </form>
                             </div>
 
